@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/localizations/LocalizationPage.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
 import 'assetLoad/assetLoadPage.dart';
@@ -40,27 +42,31 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
 
-//      /// 路由钩子回调跳转页面
-      onGenerateRoute: (RouteSettings settings) {
-        return MaterialPageRoute(builder: (context) {
-          var name = settings.name;
-          switch (name) {
-            case "route_home_page":
-              return RouteHomePage();
-            case "route_table_page":
-              return RouteTablePage();
-            case "route_arg_page":
-              return RouteArgPage();
-            case "route_test_page":
-              return RouteTestPage(
-                  // 导航适配路由
-                  text: ModalRoute.of(context).settings.arguments);
-            default:
-              return MyHomePage(title: 'Flutter Demo Home Page');
-          }
-        });
-      },
+      ],
+////      /// 路由钩子回调跳转页面
+//      onGenerateRoute: (RouteSettings settings) {
+//        return MaterialPageRoute(builder: (context) {
+//          var name = settings.name;
+//          switch (name) {
+//            case "route_home_page":
+//              return RouteHomePage();
+//            case "route_table_page":
+//              return RouteTablePage();
+//            case "route_arg_page":
+//              return RouteArgPage();
+//            case "route_test_page":
+//              return RouteTestPage(
+//                  // 导航适配路由
+//                  text: ModalRoute.of(context).settings.arguments);
+//            default:
+//              return MyHomePage(title: 'Flutter Demo Home Page');
+//          }
+//        });
+//      },
       routes: {
         /// 路由表单Map
         "route_home_page": (context) => RouteHomePage(),
@@ -87,6 +93,7 @@ class MyApp extends StatelessWidget {
         "text_show_page": (context) => TextShowPage(),
         "button_show_page": (context) => ButtonShowPage(),
         "list_view_page": (context) => RefreshListViewPage(),
+        "localization_page": (context) => LocalizationPage(),
       },
       home: new MyHomePage(title: 'Flutter Demo Home Page'),
     );

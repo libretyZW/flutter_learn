@@ -48,6 +48,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pushNamed(context, "widget_show_page");
               },
             ),
+            FlatButton(
+              child: Text('国际化演示'),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "localization_page");
+              },
+            ),
           ],
         ),
       ),

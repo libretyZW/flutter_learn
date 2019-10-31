@@ -14,16 +14,33 @@ class S implements WidgetsLocalizations {
   static S current;
 
   static const GeneratedLocalizationsDelegate delegate =
-      GeneratedLocalizationsDelegate();
+  GeneratedLocalizationsDelegate();
 
   static S of(BuildContext context) => Localizations.of<S>(context, S);
 
   @override
   TextDirection get textDirection => TextDirection.ltr;
+
+  String get localization_page_hint => "This is a localization page.";
+
+  String get localization_page_title => "localization page";
 }
 
 class $en extends S {
   const $en();
+}
+
+class $zh_CN extends S {
+  const $zh_CN();
+
+  @override
+  TextDirection get textDirection => TextDirection.ltr;
+
+  @override
+  String get localization_page_hint => "这是一个国际化页面";
+
+  @override
+  String get localization_page_title => "国际化页面";
 }
 
 class GeneratedLocalizationsDelegate extends LocalizationsDelegate<S> {
@@ -32,6 +49,7 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale("en", ""),
+      Locale("zh", "CN"),
     ];
   }
 
@@ -60,6 +78,9 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<S> {
       switch (lang) {
         case "en":
           S.current = const $en();
+          return SynchronousFuture<S>(S.current);
+        case "zh_CN":
+          S.current = const $zh_CN();
           return SynchronousFuture<S>(S.current);
         default:
         // NO-OP.
@@ -112,9 +133,8 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<S> {
         }
 
         // If no country requirement is requested, check if this locale has no country.
-        if (true != withCountry &&
-            (supportedLocale.countryCode == null ||
-                supportedLocale.countryCode.isEmpty)) {
+        if (true != withCountry && (supportedLocale.countryCode == null ||
+            supportedLocale.countryCode.isEmpty)) {
           return true;
         }
       }
@@ -126,5 +146,5 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<S> {
 String getLang(Locale l) => l == null
     ? null
     : l.countryCode != null && l.countryCode.isEmpty
-        ? l.languageCode
-        : l.toString();
+    ? l.languageCode
+    : l.toString();
