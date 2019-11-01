@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/localizations/LocalizationPage.dart';
+import 'package:flutter_learn/generated/i18n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
 import 'assetLoad/assetLoadPage.dart';
 import 'home/homePage.dart';
+import 'localizations/LocalizationPage.dart';
 import 'routeTest/RouteArgPage.dart';
 import 'routeTest/RouteHomePage.dart';
 import 'routeTest/RouteTablePage.dart';
@@ -45,8 +46,9 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
-
+        S.delegate
       ],
+      supportedLocales: S.delegate.supportedLocales,
 ////      /// 路由钩子回调跳转页面
 //      onGenerateRoute: (RouteSettings settings) {
 //        return MaterialPageRoute(builder: (context) {

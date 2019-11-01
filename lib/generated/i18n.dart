@@ -22,7 +22,6 @@ class S implements WidgetsLocalizations {
   TextDirection get textDirection => TextDirection.ltr;
 
   String get localization_page_hint => "This is a localization page.";
-
   String get localization_page_title => "localization page";
 }
 
@@ -38,7 +37,6 @@ class $zh_CN extends S {
 
   @override
   String get localization_page_hint => "这是一个国际化页面";
-
   @override
   String get localization_page_title => "国际化页面";
 }

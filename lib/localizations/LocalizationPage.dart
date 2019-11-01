@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/generated/i18n.dart';
+import 'package:flutter_learn/generated/i18n.dart';
 
 class LocalizationPage extends StatelessWidget {
   @override
